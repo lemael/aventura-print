@@ -1,0 +1,23 @@
+# Abhängigkeiten
+node_modules/
+venv/
+
+# Build-Ausgaben
+dist/
+*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*

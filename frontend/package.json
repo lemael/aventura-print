@@ -1,0 +1,15 @@
+{
+  "name": "clone_project_frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontend static server",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "npm run build && http-server -p 5500 -c-1 .",
+    "serve": "http-server -p 5500 -c-1 ."
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "typescript": "^5.8.3"
+  }
+}
