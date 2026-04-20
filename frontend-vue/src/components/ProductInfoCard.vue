@@ -1,7 +1,7 @@
 <template>
   <div class="product-item product-item-2">
     <div class="center-img">
-      <a :href="href" :title="title">
+      <a :href="resolvedHref" :title="title">
         <slot name="image">
           <img
             class="img-responsive product-img"
@@ -17,7 +17,7 @@
       <p>{{ description }}</p>
     </div>
     <div class="action-button">
-      <a :href="href" :title="actionTitle">{{ actionText }}</a>
+      <a :href="resolvedHref" :title="actionTitle">{{ actionText }}</a>
     </div>
   </div>
 </template>
@@ -32,5 +32,16 @@ const props = defineProps<{
   actionTitle?: string;
 }>();
 
-const resolvedImageSrc = props.imageSrc ?? "/index_files/Unbenannt.html";
+const baseUrl = import.meta.env.BASE_URL;
+
+const resolvedHref =
+  props.href.startsWith("/") && !props.href.startsWith("//")
+    ? `${baseUrl}#${props.href}`
+    : props.href;
+
+const rawImageSrc = props.imageSrc ?? "/index_files/Unbenannt.html";
+const resolvedImageSrc =
+  rawImageSrc.startsWith("/") && !rawImageSrc.startsWith("//")
+    ? `${baseUrl}${rawImageSrc.slice(1)}`
+    : rawImageSrc;
 </script>

@@ -1,8 +1,8 @@
 <template>
   <!-- CSS für die Startseite -->
-  <link rel="stylesheet" href="/index_files/raleway.css" />
-  <link rel="stylesheet" href="/index_files/vendor.css" />
-  <link rel="stylesheet" href="/index_files/styles.css" />
+  <link rel="stylesheet" :href="`${baseUrl}index_files/raleway.css`" />
+  <link rel="stylesheet" :href="`${baseUrl}index_files/vendor.css`" />
+  <link rel="stylesheet" :href="`${baseUrl}index_files/styles.css`" />
 
   <!-- Slider -->
   <HomeSlider />
@@ -114,4 +114,6 @@ import HomeNeueProdukte from "../components/HomeNeueProdukte.vue";
 import HomeSlider from "../components/HomeSlider.vue";
 import HomeTeaser from "../components/HomeTeaser.vue";
 import ProductInfoCard from "../components/ProductInfoCard.vue";
+
+const baseUrl = import.meta.env.BASE_URL;
 </script>

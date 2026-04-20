@@ -1,13 +1,13 @@
 <template>
-  <link rel="stylesheet" href="/kontakt_files/raleway.css" />
-  <link rel="stylesheet" href="/kontakt_files/vendor.css" />
-  <link rel="stylesheet" href="/kontakt_files/styles.css" />
-  <link rel="stylesheet" href="/kontakt_files/style.css" />
+  <link rel="stylesheet" :href="`${baseUrl}kontakt_files/raleway.css`" />
+  <link rel="stylesheet" :href="`${baseUrl}kontakt_files/vendor.css`" />
+  <link rel="stylesheet" :href="`${baseUrl}kontakt_files/styles.css`" />
+  <link rel="stylesheet" :href="`${baseUrl}kontakt_files/style.css`" />
 
   <div class="slider">
     <div class="image-container">
       <img
-        src="/kontakt_files/header-subpages.png"
+        :src="`${baseUrl}kontakt_files/header-subpages.png`"
         class="img-responsive"
         title="Header"
         alt="Header"
@@ -223,3 +223,7 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+const baseUrl = import.meta.env.BASE_URL;
+</script>
